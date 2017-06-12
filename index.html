@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="assets/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/jquery.fancybox.pack.js?v=2.1.4"></script>
+	<script type="text/javascript" src="assets/jquery.cookie.js"></script>
+
+	<link rel="stylesheet" href=“assets/jquery.fancybox.css?v=2.1.4” type="text/css" media="screen" />
+
+	<style>
+		body { background-color: #000;}
+	    #lb_container {
+	    	background: #fff; 
+	    	border-radius: 5px; 
+	    	display:none; 
+	    	height: 200px;
+	    	padding: 20px;
+	    }
+	    #lb_container p,
+		#lb_container #lb_buttons,
+		#lb_container span {
+			text-align:center;
+			margin-bottom:30px;
+		}
+	    #lb_container a.btn {
+			font:bold 20px 'Helvetica-Neue', Arial-Narrow, Arial;
+			color:#FFF;
+			display: inline-block;
+			background-color: #E67700;
+			margin-bottom: 20px; 
+			padding:.6em .8em;
+			text-decoration: none;
+			position: relative;
+			top:0;
+		}
+	    #lb_container span {
+			font-style:italic;
+			display:block;
+			margin:0;
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="lb_container">
+  <p>Thank you for visiting the United States Holocaust Memorial Museum website.<br> Please take 5-10 minutes to answer a few short questions about your experience using the website today.</p>
+  <div id="lb_buttons"> <a class="btn btn-primary" target="_blank" title="Take survey" href="#">TAKE SURVEY</a>  <div>
+  <span>(Survey opens in new window)</span>
+</div>
+
+<script type="text/javascript">
+$(document).ready( function(){
+
+    var viewed_modal = $.cookie('has_viewed_modal');
+
+	if(!viewed_modal) {
+		setTimeout( function(){
+			$.fancybox({
+				href : "#lb_container",
+				fitToView : false,
+				autoSize : false
+			});
+
+			$('#lb_buttons .btn').click( function(){ $.fancybox.close(); });
+
+		}, 7000);
+
+		$.cookie('has_viewed_modal', 'yes', { expires: 7 });
+
+	}
+
+});
+
+</script>
+
+</body>
+</html>
