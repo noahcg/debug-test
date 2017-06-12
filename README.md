@@ -43,3 +43,29 @@ Added/Modified the following CSS to the pre-existing styles for #lb_container a.
 	position: absolute;
 }
 ```
+
+Added a close button in the upper right corner of the modal
+
+```
+<div class="close_button">&times;</div>
+
+.close_button {
+	background: #000;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-size: 20px;
+	height: 24px;
+	line-height: 22px;
+	position: absolute;
+	text-align: center;
+	top: 5px;
+	right: 5px;
+	width: 24px;
+	-webkit-box-shadow: -4px 3px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -4px 3px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -4px 3px 5px 0px rgba(0,0,0,0.75);
+}
+```

@@ -38,6 +38,25 @@
 			display:block;
 			margin:0;
 		}
+		.close_button {
+			background: #000;
+			border: 2px solid #fff;
+			border-radius: 50%;
+			color: #fff;
+			cursor: pointer;
+			display: block;
+			font-size: 20px;
+			height: 24px;
+			line-height: 22px;
+			position: absolute;
+			text-align: center;
+			top: 5px;
+			right: 5px;
+			width: 24px;
+			-webkit-box-shadow: -4px 3px 5px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: -4px 3px 5px 0px rgba(0,0,0,0.75);
+			box-shadow: -4px 3px 5px 0px rgba(0,0,0,0.75);
+		}
 	</style>
 </head>
 
@@ -45,7 +64,7 @@
 
 <div id="lb_container">
   <p>Thank you for visiting the United States Holocaust Memorial Museum website.<br> Please take 5-10 minutes to answer a few short questions about your experience using the website today.</p>
-  <div id="lb_buttons"> <a class="btn btn-primary" target="_blank" title="Take survey" href="#">TAKE SURVEY</a>  <div>
+  <div id="lb_buttons"> <a class="btn btn-primary" target="_blank" title="Take survey" href="#">TAKE SURVEY</a>  <div class="close_button">&times;</div><div>
   <span>(Survey opens in new window)</span>
 </div>
 
@@ -62,7 +81,7 @@ $(document).ready( function(){
 				autoSize : false
 			});
 
-			$('#lb_buttons .btn').click( function(){ $.fancybox.close(); });
+			$('#lb_buttons .btn, .close_button').click( function(){ $.fancybox.close(); });
 
 		}, 7000);
 
